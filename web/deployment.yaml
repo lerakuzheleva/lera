@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: marsel-demo-web
+  namespace: NAMESPACE
   labels:
     app: marsel-demo-web
 spec:
@@ -16,6 +17,6 @@ spec:
     spec:
       containers:
       - name: marsel-demo-web
-        image: 401413892014.dkr.ecr.us-east-1.amazonaws.com/webapp:marsel
+        image: 401413892014.dkr.ecr.us-east-1.amazonaws.com/webapp:IMAGEVERSION
         ports:
         - containerPort: 80
