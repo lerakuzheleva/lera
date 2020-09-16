@@ -32,8 +32,6 @@ spec:
       checkout scm
       container('jenkins-slave') {
         sh '''
-        export AWS_DEFAULT_REGION=us-east-1
-        cd web
         ./deploy
         '''
       }
