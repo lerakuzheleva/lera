@@ -1,7 +1,8 @@
 #!/bin/bash
 
-branch=$BRANCH_NAME
+branch=$BRANCH_NAME # this one
 echo "Branch - $branch"
+
 if [ "$branch" = "production/deploy" ]
 then
   stage=prod
@@ -22,9 +23,9 @@ echo $stage
 cd web
 make build version=$webversion
 make push version=$webversion
-make deploy version=$webversion namespace=$namespace
+make deploy version=$webversion namespace=$namespace # this one
 
 cd ../api
 make build version=$apiversion
 make push version=$apiversion
-make deploy version=$apiversiona namespace=$namespace
+make deploy version=$apiversion namespace=$namespace
